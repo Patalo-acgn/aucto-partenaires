@@ -16,13 +16,13 @@
   }
   html { scroll-behavior: smooth; }
   body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--bg); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: rgba(250,251,253,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 3rem; background: var(--blue-dark); border-bottom: none; }
   .nav-logo { display: flex; align-items: center; text-decoration: none; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
-  .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 400; color: var(--text-muted); transition: color 0.2s; }
-  .nav-links a:hover { color: var(--blue); }
-  .nav-cta { background: var(--blue) !important; color: #fff !important; padding: 0.55rem 1.4rem; border-radius: 8px; font-weight: 500 !important; }
-  .nav-cta:hover { background: var(--blue-dark) !important; }
+  .nav-links a { text-decoration: none; font-size: 0.875rem; font-weight: 400; color: rgba(255,255,255,0.75); transition: color 0.2s; }
+  .nav-links a:hover { color: #fff; }
+  .nav-cta { background: #fff !important; color: var(--blue-dark) !important; padding: 0.55rem 1.4rem; border-radius: 8px; font-weight: 500 !important; }
+  .nav-cta:hover { background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
   #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 3rem 5rem; position: relative; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.6; }
@@ -142,7 +142,7 @@
 
 <nav>
   <a href="#" class="nav-logo">
-    <img src="assets/logos/whiteinblue.png" alt="Aucto Partenaires" style="height: 38px; width: auto; display: block;">
+    <img src="assets/logos/whiteinblue.png" alt="Aucto Partenaires" style="height: 52px; width: auto; display: block;">
   </a>
   <ul class="nav-links">
     <li><a href="#about">A propos</a></li>
@@ -330,7 +330,7 @@
 
 <footer>
   <a href="#" class="footer-logo">
-    <img src="assets/logos/whiteinblue.png" alt="Aucto Partenaires" style="height: 32px; width: auto; display: block; opacity: 0.9;">
+    <img src="assets/logos/whiteinblue.png" alt="Aucto Partenaires" style="height: 48px; width: auto; display: block;">
   </a>
   <div class="footer-mention">2026 Alexis Cagnon, EI. Tous droits reserves.</div>
   <div class="footer-links">
