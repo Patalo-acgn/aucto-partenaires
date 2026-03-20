@@ -23,13 +23,17 @@
   .nav-links a:hover { color: #fff; }
   .nav-cta { background: #fff !important; color: var(--blue-dark) !important; padding: 0.55rem 1.4rem; border-radius: 8px; font-weight: 500 !important; }
   .nav-cta:hover { background: var(--blue-pale) !important; color: var(--blue-dark) !important; }
-  #hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 3rem 5rem; position: relative; overflow: hidden; }
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 10rem 3rem 5rem; position: relative; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.6; }
-  .hero-blob { position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw; max-width: 700px; max-height: 700px; background: radial-gradient(ellipse at 60% 40%, rgba(61,122,229,0.13) 0%, rgba(26,79,160,0.06) 50%, transparent 80%); border-radius: 50%; }
+  .hero-blob { position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw; max-width: 700px; max-height: 700px; background: radial-gradient(ellipse at 60% 40%, rgba(61,122,229,0.13) 0%, rgba(26,79,160,0.06) 50%, transparent 80%); border-radius: 50%; animation: breathe 6s ease-in-out infinite; }
   .hero-inner { max-width: 820px; position: relative; z-index: 2; }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-pale); color: var(--blue); font-size: 0.78rem; font-weight: 500; padding: 0.35rem 0.9rem; border-radius: 100px; border: 1px solid rgba(26,79,160,0.18); margin-bottom: 2rem; letter-spacing: 0.04em; text-transform: uppercase; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--blue-mid); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
+  @keyframes breathe {
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
   @keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.75); } }
   h1 { font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(2.4rem, 5.5vw, 4rem); line-height: 1.1; letter-spacing: -0.03em; color: var(--blue-dark); margin-bottom: 1.5rem; }
   h1 em { font-style: normal; color: var(--blue-mid); }
