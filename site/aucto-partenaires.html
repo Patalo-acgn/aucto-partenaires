@@ -576,7 +576,7 @@
           <div>
             <div class="ci-label">Email</div>
             <!-- ✏️ REMPLACE ICI ton adresse email -->
-            <div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="06656968726765724667736572692b766774726368676f7463286074">[email&#160;protected]</a></div>
+            <div class="ci-val">contact@aucto-partenaires.fr</div>
           </div>
         </div>
         <div class="contact-info">
@@ -654,5 +654,9 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const obs = new Intersec
+<script>
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+</script>
