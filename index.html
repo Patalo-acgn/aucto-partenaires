@@ -125,7 +125,7 @@
   .tarifs-inner { max-width: 900px; margin: 0 auto; }
   .tarifs-header { text-align: center; margin-bottom: 3.5rem; }
   .tarifs-header .section-lead { margin: 0 auto; }
-  .tarifs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .tarifs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: stretch; }
   .tarif-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
   .tarif-card:hover { border-color: rgba(10,46,64,0.3); transform: translateY(-3px); }
   .tarif-card.featured { background: var(--blue-dark); border-color: var(--blue-dark); }
@@ -139,7 +139,7 @@
   .tarif-card.featured .tarif-price span { color: rgba(255,255,255,0.5); }
   .tarif-delay { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
   .tarif-card.featured .tarif-delay { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.1); }
-  .tarif-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .tarif-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; flex: 1; }
   .tarif-list li { font-size: 0.875rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: flex-start; line-height: 1.6; }
   .tarif-card.featured .tarif-list li { color: rgba(255,255,255,0.65); }
   .tarif-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--blue-pale); border: 1.5px solid var(--blue-mid); flex-shrink: 0; margin-top: 2px; display: block; }
