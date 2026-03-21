@@ -144,7 +144,8 @@
   .tarif-card.featured .tarif-list li { color: rgba(255,255,255,0.65); }
   .tarif-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--blue-pale); border: 1.5px solid var(--blue-mid); flex-shrink: 0; margin-top: 2px; display: block; }
   .tarif-card.featured .tarif-list li::before { background: rgba(12,184,182,0.15); border-color: #0CB8B6; }
-  .tarif-cta { display: block; text-align: center; margin-top: auto; padding-top: 3rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+  .tarif-cta-wrap { margin-top: auto; padding-top: 2.5rem; }
+  .tarif-cta { display: block; text-align: center; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
   .tarif-cta:hover { background: var(--blue-dark); }
   .tarif-card.featured .tarif-cta { background: #fff; color: var(--blue-dark); }
   .tarif-card.featured .tarif-cta:hover { background: var(--blue-pale); }
@@ -334,7 +335,7 @@
           <li>Un plan d'action concret, priorisé et actionnable</li>
           <li>Session de restitution d'1h30 pour parcourir les résultats ensemble</li>
         </ul>
-        <a href="#contact" class="tarif-cta">Démarrer le diagnostic</a>
+        <div class="tarif-cta-wrap"><a href="#contact" class="tarif-cta">Démarrer le diagnostic</a></div>
       </div>
       <div class="tarif-card featured fade-up">
         <div class="tarif-step">Étape 2</div>
@@ -347,7 +348,7 @@
           <li>Disponible entre les sessions pour débloquer les sujets urgents</li>
           <li>Chaque mois s'appuie sur les résultats du précédent</li>
         </ul>
-        <a href="#contact" class="tarif-cta">Prendre contact</a>
+        <div class="tarif-cta-wrap"><a href="#contact" class="tarif-cta">Prendre contact</a></div>
       </div>
     </div>
   </div>
