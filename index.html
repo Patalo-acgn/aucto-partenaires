@@ -10,7 +10,7 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
     --blue: #0E6E8C; --blue-dark: #0A2E40; --blue-pale: #DCF2F7;
-    --blue-mid: #1D6BFF; --text: #0E1825; --text-muted: #5A6478;
+    --blue-mid: #0CB8B6; --text: #0E1825; --text-muted: #5A6478;
     --border: rgba(10,46,64,0.12); --bg: #FAFBFD; --white: #fff;
     --section-pad: 7rem 2rem; --radius-lg: 20px;
   }
@@ -26,7 +26,7 @@
   #hero { min-height: 100vh; display: flex; align-items: center; padding: 10rem 3rem 5rem; position: relative; overflow: hidden; }
   .hero-bg { position: absolute; inset: 0; pointer-events: none; }
   .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px); background-size: 60px 60px; opacity: 0.6; }
-  .hero-blob { position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw; max-width: 700px; max-height: 700px; background: radial-gradient(ellipse at 60% 40%, rgba(27,157,184,0.45) 0%, rgba(10,46,64,0.18) 40%, rgba(10,46,64,0.07) 65%, transparent 85%); border-radius: 50%; animation: breathe 6s ease-in-out infinite; }
+  .hero-blob { position: absolute; top: -10%; right: -5%; width: 55vw; height: 55vw; max-width: 700px; max-height: 700px; background: radial-gradient(ellipse at 60% 40%, rgba(12,184,182,0.45) 0%, rgba(10,46,64,0.18) 40%, rgba(10,46,64,0.07) 65%, transparent 85%); border-radius: 50%; animation: breathe 6s ease-in-out infinite; }
   .hero-inner { max-width: 820px; position: relative; z-index: 2; }
   .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--blue-pale); color: var(--blue); font-size: 0.78rem; font-weight: 500; padding: 0.35rem 0.9rem; border-radius: 100px; border: 1px solid rgba(10,46,64,0.18); margin-bottom: 2rem; letter-spacing: 0.04em; text-transform: uppercase; }
   .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--blue-mid); border-radius: 50%; animation: pulse-dot 2s ease-in-out infinite; }
@@ -130,7 +130,7 @@
   .tarif-card:hover { border-color: rgba(10,46,64,0.3); transform: translateY(-3px); }
   .tarif-card.featured { background: var(--blue-dark); border-color: var(--blue-dark); }
   .tarif-step { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.75rem; }
-  .tarif-card.featured .tarif-step { color: #1B9DB8; }
+  .tarif-card.featured .tarif-step { color: #0CB8B6; }
   .tarif-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--blue-dark); margin-bottom: 0.5rem; }
   .tarif-card.featured .tarif-title { color: #fff; }
   .tarif-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--blue-dark); line-height: 1; margin-bottom: 0.3rem; }
@@ -143,8 +143,8 @@
   .tarif-list li { font-size: 0.875rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: flex-start; line-height: 1.6; }
   .tarif-card.featured .tarif-list li { color: rgba(255,255,255,0.65); }
   .tarif-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--blue-pale); border: 1.5px solid var(--blue-mid); flex-shrink: 0; margin-top: 2px; display: block; }
-  .tarif-card.featured .tarif-list li::before { background: rgba(27,157,184,0.15); border-color: #1B9DB8; }
-  .tarif-cta { display: block; text-align: center; margin-top: auto; padding-top: 2rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+  .tarif-card.featured .tarif-list li::before { background: rgba(12,184,182,0.15); border-color: #0CB8B6; }
+  .tarif-cta { display: block; text-align: center; margin-top: auto; padding-top: 3rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
   .tarif-cta:hover { background: var(--blue-dark); }
   .tarif-card.featured .tarif-cta { background: #fff; color: var(--blue-dark); }
   .tarif-card.featured .tarif-cta:hover { background: var(--blue-pale); }
