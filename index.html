@@ -126,15 +126,16 @@
   .tarifs-header { text-align: center; margin-bottom: 3.5rem; }
   .tarifs-header .section-lead { margin: 0 auto; }
   .tarifs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .tarif-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; transition: border-color 0.2s, transform 0.2s; }
+  .tarif-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; transition: border-color 0.2s, transform 0.2s; display: flex; flex-direction: column; }
   .tarif-card:hover { border-color: rgba(10,46,64,0.3); transform: translateY(-3px); }
   .tarif-card.featured { background: var(--blue-dark); border-color: var(--blue-dark); }
   .tarif-step { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.75rem; }
   .tarif-card.featured .tarif-step { color: #1B9DB8; }
   .tarif-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--blue-dark); margin-bottom: 0.5rem; }
   .tarif-card.featured .tarif-title { color: #fff; }
-  .tarif-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--blue-mid); line-height: 1; margin-bottom: 0.3rem; }
+  .tarif-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--blue-dark); line-height: 1; margin-bottom: 0.3rem; }
   .tarif-price span { font-size: 0.95rem; font-weight: 400; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
+  .tarif-card.featured .tarif-price { color: #fff; }
   .tarif-card.featured .tarif-price span { color: rgba(255,255,255,0.5); }
   .tarif-delay { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
   .tarif-card.featured .tarif-delay { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.1); }
@@ -143,7 +144,7 @@
   .tarif-card.featured .tarif-list li { color: rgba(255,255,255,0.65); }
   .tarif-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--blue-pale); border: 1.5px solid var(--blue-mid); flex-shrink: 0; margin-top: 2px; display: block; }
   .tarif-card.featured .tarif-list li::before { background: rgba(27,157,184,0.15); border-color: #1B9DB8; }
-  .tarif-cta { display: block; text-align: center; margin-top: 2rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+  .tarif-cta { display: block; text-align: center; margin-top: auto; padding-top: 2rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
   .tarif-cta:hover { background: var(--blue-dark); }
   .tarif-card.featured .tarif-cta { background: #fff; color: var(--blue-dark); }
   .tarif-card.featured .tarif-cta:hover { background: var(--blue-pale); }
@@ -319,7 +320,7 @@
     <div class="tarifs-header">
       <div class="section-eyebrow">Tarifs</div>
       <h2>Une approche en deux temps.</h2>
-      <p class="section-lead">On commence par comprendre votre situation avant de déployer quoi que ce soit.</p>
+      <p class="section-lead">De l'analyse à l'action.</p>
     </div>
     <div class="tarifs-grid">
       <div class="tarif-card fade-up">
