@@ -121,6 +121,32 @@
   textarea { resize: vertical; min-height: 120px; }
   .form-submit { background: var(--blue); color: #fff; border: none; border-radius: 10px; padding: 0.85rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.95rem; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.15s; width: 100%; margin-top: 0.25rem; }
   .form-submit:hover { background: var(--blue-dark); transform: translateY(-1px); }
+  #tarifs { padding: var(--section-pad); background: var(--white); }
+  .tarifs-inner { max-width: 900px; margin: 0 auto; }
+  .tarifs-header { text-align: center; margin-bottom: 3.5rem; }
+  .tarifs-header .section-lead { margin: 0 auto; }
+  .tarifs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .tarif-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; transition: border-color 0.2s, transform 0.2s; }
+  .tarif-card:hover { border-color: rgba(10,46,64,0.3); transform: translateY(-3px); }
+  .tarif-card.featured { background: var(--blue-dark); border-color: var(--blue-dark); }
+  .tarif-step { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-mid); margin-bottom: 0.75rem; }
+  .tarif-card.featured .tarif-step { color: #1B9DB8; }
+  .tarif-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--blue-dark); margin-bottom: 0.5rem; }
+  .tarif-card.featured .tarif-title { color: #fff; }
+  .tarif-price { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 2.2rem; color: var(--blue-mid); line-height: 1; margin-bottom: 0.3rem; }
+  .tarif-price span { font-size: 0.95rem; font-weight: 400; color: var(--text-muted); font-family: 'DM Sans', sans-serif; }
+  .tarif-card.featured .tarif-price span { color: rgba(255,255,255,0.5); }
+  .tarif-delay { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.75rem; padding-bottom: 1.75rem; border-bottom: 1px solid var(--border); }
+  .tarif-card.featured .tarif-delay { color: rgba(255,255,255,0.45); border-color: rgba(255,255,255,0.1); }
+  .tarif-list { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .tarif-list li { font-size: 0.875rem; color: var(--text-muted); display: flex; gap: 0.75rem; align-items: flex-start; line-height: 1.6; }
+  .tarif-card.featured .tarif-list li { color: rgba(255,255,255,0.65); }
+  .tarif-list li::before { content: ''; width: 16px; height: 16px; border-radius: 50%; background: var(--blue-pale); border: 1.5px solid var(--blue-mid); flex-shrink: 0; margin-top: 2px; display: block; }
+  .tarif-card.featured .tarif-list li::before { background: rgba(27,157,184,0.15); border-color: #1B9DB8; }
+  .tarif-cta { display: block; text-align: center; margin-top: 2rem; background: var(--blue); color: #fff; padding: 0.8rem 1.5rem; border-radius: 10px; font-weight: 500; font-size: 0.9rem; text-decoration: none; transition: background 0.2s; }
+  .tarif-cta:hover { background: var(--blue-dark); }
+  .tarif-card.featured .tarif-cta { background: #fff; color: var(--blue-dark); }
+  .tarif-card.featured .tarif-cta:hover { background: var(--blue-pale); }
   footer { background: var(--blue-dark); padding: 2.5rem 3rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
   .footer-logo { display: flex; align-items: center; text-decoration: none; }
   .footer-mention { font-size: 0.78rem; color: rgba(255,255,255,0.35); }
@@ -327,6 +353,44 @@
           <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Décrivez votre projet ou votre problématique en quelques lignes..."></textarea></div>
           <button type="submit" class="form-submit">Envoyer le message</button>
         </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="tarifs-inner">
+    <div class="tarifs-header">
+      <div class="section-eyebrow">Tarifs</div>
+      <h2>Une approche en deux temps.</h2>
+      <p class="section-lead">On commence par comprendre votre situation avant de déployer quoi que ce soit.</p>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tarif-card fade-up">
+        <div class="tarif-step">Étape 1</div>
+        <div class="tarif-title">Diagnostic</div>
+        <div class="tarif-price">2 000€ <span>one-shot</span></div>
+        <div class="tarif-delay">Livré en 15 jours</div>
+        <ul class="tarif-list">
+          <li>Analyse complète de votre situation commerciale</li>
+          <li>Identification des freins et des opportunités de croissance</li>
+          <li>Un plan d'action concret, priorisé et actionnable</li>
+          <li>Session de restitution d'1h30 pour parcourir les résultats ensemble</li>
+        </ul>
+        <a href="#contact" class="tarif-cta">Démarrer le diagnostic</a>
+      </div>
+      <div class="tarif-card featured fade-up">
+        <div class="tarif-step">Étape 2</div>
+        <div class="tarif-title">Accompagnement</div>
+        <div class="tarif-price">3 000€ <span>/ mois</span></div>
+        <div class="tarif-delay">3 mois minimum</div>
+        <ul class="tarif-list">
+          <li>Deux points mensuels en tête-à-tête pour piloter l'avancement</li>
+          <li>Un engagement terrain : je déploie avec vous, pas uniquement en conseil</li>
+          <li>Disponible entre les sessions pour débloquer les sujets urgents</li>
+          <li>Chaque mois s'appuie sur les résultats du précédent</li>
+        </ul>
+        <a href="#contact" class="tarif-cta">Prendre contact</a>
       </div>
     </div>
   </div>
