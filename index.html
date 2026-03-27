@@ -10,107 +10,122 @@
   html, body { height: 100%; }
   body {
     font-family: 'DM Sans', sans-serif;
-    background: #0A2E40;
+    background: #F0F9FA;
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     min-height: 100vh; overflow: hidden; position: relative;
   }
 
+  .bg-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(12,184,182,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(12,184,182,0.07) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
   .bg-blob {
-    position: absolute; top: -10%; right: -5%;
-    width: 60vw; height: 60vw; max-width: 700px; max-height: 700px;
-    background: radial-gradient(ellipse at 60% 40%, rgba(12,184,182,0.18) 0%, rgba(14,110,140,0.08) 50%, transparent 80%);
+    position: absolute; top: -15%; right: -10%;
+    width: 55vw; height: 55vw; max-width: 600px; max-height: 600px;
+    background: radial-gradient(ellipse at 60% 40%, rgba(12,184,182,0.15) 0%, rgba(14,110,140,0.06) 55%, transparent 80%);
     border-radius: 50%;
     animation: breathe 7s ease-in-out infinite;
     pointer-events: none;
   }
   .bg-blob-2 {
     position: absolute; bottom: -15%; left: -10%;
-    width: 50vw; height: 50vw; max-width: 500px; max-height: 500px;
-    background: radial-gradient(ellipse at 40% 60%, rgba(12,184,182,0.1) 0%, rgba(10,46,64,0.05) 60%, transparent 85%);
+    width: 45vw; height: 45vw; max-width: 500px; max-height: 500px;
+    background: radial-gradient(ellipse at 40% 60%, rgba(12,184,182,0.1) 0%, transparent 75%);
     border-radius: 50%;
     animation: breathe 9s ease-in-out infinite reverse;
     pointer-events: none;
   }
-  .bg-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(12,184,182,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(12,184,182,0.05) 1px, transparent 1px);
-    background-size: 60px 60px;
-    pointer-events: none;
-  }
   @keyframes breathe {
-    0%, 100% { opacity: 0.7; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.08); }
+    0%, 100% { opacity: 0.6; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.06); }
   }
 
   .container {
     position: relative; z-index: 2;
     display: flex; flex-direction: column;
     align-items: center; text-align: center;
-    padding: 2rem;
-    gap: 2.5rem;
+    padding: 2rem; gap: 2rem;
   }
 
   .logo-wrap img {
     height: 300px; width: auto;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(500%) hue-rotate(155deg) brightness(90%);
     animation: fadein 1s ease forwards;
   }
 
   .tagline {
     font-family: 'Syne', sans-serif;
-    font-weight: 700; font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-    color: rgba(255,255,255,0.9);
-    letter-spacing: 0.02em;
+    font-weight: 700; font-size: clamp(0.85rem, 1.8vw, 1.1rem);
+    color: #0A2E40;
+    letter-spacing: 0.06em;
+    opacity: 0.6;
     animation: fadein 1.2s ease forwards;
   }
 
   .divider {
-    width: 48px; height: 2px;
+    width: 40px; height: 2px;
     background: linear-gradient(90deg, transparent, #0CB8B6, transparent);
     animation: fadein 1.4s ease forwards;
   }
 
   .soon {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem; font-weight: 400;
-    color: rgba(255,255,255,0.35);
-    letter-spacing: 0.15em; text-transform: uppercase;
+    font-size: 0.78rem; font-weight: 400;
+    color: #0A2E40; opacity: 0.4;
+    letter-spacing: 0.12em; text-transform: uppercase;
     animation: fadein 1.6s ease forwards;
   }
 
-  .linkedin-btn {
-    display: inline-flex; align-items: center; gap: 10px;
-    background: rgba(12,184,182,0.12);
-    border: 1px solid rgba(12,184,182,0.3);
-    color: #0CB8B6;
-    padding: 0.75rem 1.75rem;
-    border-radius: 100px;
-    text-decoration: none;
-    font-size: 0.9rem; font-weight: 500;
-    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  .contact-wrap {
+    display: flex; flex-direction: column; align-items: center; gap: 1rem;
     animation: fadein 1.8s ease forwards;
   }
-  .linkedin-btn:hover {
-    background: rgba(12,184,182,0.22);
-    border-color: #0CB8B6;
-    color: #fff;
+
+  .contact-label {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem; font-weight: 700;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    background: linear-gradient(90deg, #0CB8B6, #0A2E40, #0CB8B6);
+    background-size: 200% auto;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: fadein 1.8s ease forwards, shimmer 6s linear infinite;
   }
-  .linkedin-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+  .linkedin-btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    background: #fff;
+    border: 1.5px solid rgba(12,184,182,0.35);
+    color: #0A2E40;
+    padding: 0.65rem 1.6rem;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 0.875rem; font-weight: 500;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 16px rgba(12,184,182,0.1);
+  }
+  .linkedin-btn:hover {
+    background: #f0fdfb;
+    border-color: #0CB8B6;
+    box-shadow: 0 4px 24px rgba(12,184,182,0.18);
+  }
+  .linkedin-btn svg { width: 16px; height: 16px; fill: #0CB8B6; }
 
   .footer-mention {
     position: absolute; bottom: 1.5rem;
-    font-size: 0.72rem; color: rgba(255,255,255,0.2);
-    animation: fadein 2s ease forwards;
+    font-size: 0.72rem; color: rgba(10,46,64,0.3);
   }
-  .footer-mention a { color: rgba(255,255,255,0.3); text-decoration: none; }
-  .footer-mention a:hover { color: rgba(255,255,255,0.6); }
+  .footer-mention a { color: rgba(10,46,64,0.4); text-decoration: none; }
+  .footer-mention a:hover { color: rgba(10,46,64,0.7); }
 
   @keyframes shimmer {
     0% { background-position: 200% center; }
     100% { background-position: -200% center; }
   }
   @keyframes fadein {
-    from { opacity: 0; transform: translateY(12px); }
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
 </style>
@@ -132,17 +147,22 @@
 
   <div class="soon">Site en cours de construction</div>
 
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 1.25rem; animation: fadein 1.8s ease forwards;">
-    <p style="font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; background: linear-gradient(90deg, #0CB8B6, #fff, #0CB8B6); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: shimmer 6s linear infinite;">Me contacter</p>
-    <div style="display: flex; flex-direction: column; gap: 0.6rem; align-items: center;">
-      <a href="https://www.LinkedIn/" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(12,184,182,0.1); border: 1px solid rgba(12,184,182,0.25); color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 0.6rem 1.4rem; border-radius: 100px; transition: background 0.2s; font-family: 'DM Sans', sans-serif;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="#0CB8B6"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        LinkedIn
-      </a>
-      <a href="mailto:contact@aucto-partenaires.com" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.85rem; font-weight: 400; padding: 0.6rem 1.4rem; border-radius: 100px; transition: background 0.2s; font-family: 'DM Sans', sans-serif;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0CB8B6" stroke-width="2"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        contact@aucto-partenaires.com
-      </a>
-    </div>
+  <div class="contact-wrap">
+    <span class="contact-label">Me contacter</span>
+    <a href="https://www.linkedin.com/in/alexis-cagnon/" target="_blank" rel="noopener" class="linkedin-btn">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+        <rect x="2" y="9" width="4" height="12"/>
+        <circle cx="4" cy="4" r="2"/>
+      </svg>
+      LinkedIn
+    </a>
   </div>
 </div>
+
+<div class="footer-mention">
+  © 2026 Alexis Cagnon — EI &nbsp;·&nbsp; <a href="mentions-legales.html">Mentions légales</a>
+</div>
+
+</body>
+</html>
