@@ -1,8 +1,13 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aucto Partenaires</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="icon" type="image/png" href="assets/logos/favicon.png">
+<link rel="shortcut icon" href="assets/logos/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap">
-
 <style>
 :root {
   --navy: #0A2E40;
@@ -12,10 +17,8 @@
   --border: rgba(12,184,182,0.3);
   --btn-shadow: 0 2px 16px rgba(12,184,182,0.12);
 }
-
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
-
 body {
   font-family: 'DM Sans', sans-serif;
   background: #ffffff;
@@ -30,7 +33,6 @@ body {
   padding-right: max(16px, env(safe-area-inset-right, 0px));
   padding-block: 2rem;
 }
-
 canvas {
   position: absolute;
   inset: 0;
@@ -39,7 +41,6 @@ canvas {
   pointer-events: none;
   z-index: 0;
 }
-
 .container {
   position: relative;
   z-index: 2;
@@ -49,14 +50,12 @@ canvas {
   text-align: center;
   gap: 1.75rem;
 }
-
 .logo-wrap img {
   height: 110px;
   width: auto;
   filter: brightness(0) saturate(100%) invert(27%) sepia(51%) saturate(500%) hue-rotate(155deg) brightness(90%);
   animation: fadein 0.9s ease forwards;
 }
-
 .tagline {
   font-family: 'Syne', sans-serif;
   font-weight: 700;
@@ -66,14 +65,12 @@ canvas {
   text-transform: uppercase;
   animation: fadein 1.1s ease forwards;
 }
-
 .divider {
   width: 36px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--teal), transparent);
   animation: fadein 1.3s ease forwards;
 }
-
 .contact-wrap {
   display: flex;
   flex-direction: column;
@@ -81,7 +78,6 @@ canvas {
   gap: 0.875rem;
   animation: fadein 1.5s ease forwards;
 }
-
 .contact-label {
   font-family: 'Syne', sans-serif;
   font-size: 0.75rem;
@@ -95,7 +91,6 @@ canvas {
   background-clip: text;
   animation: shimmer 5s linear infinite;
 }
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -117,7 +112,6 @@ canvas {
   box-shadow: 0 4px 24px rgba(12,184,182,0.2);
 }
 .btn svg { width: 15px; height: 15px; flex-shrink: 0; }
-
 .footer-mention {
   position: absolute;
   bottom: 1.25rem;
@@ -127,14 +121,14 @@ canvas {
 }
 .footer-mention a { color: rgba(10,46,64,0.35); text-decoration: none; }
 .footer-mention a:hover { color: var(--navy); }
-
 @keyframes fadein { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @keyframes shimmer { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-
 @media (prefers-reduced-motion: reduce) {
   .logo-wrap img, .tagline, .divider, .contact-wrap { animation: none; }
 }
 </style>
+</head>
+<body>
 
 <canvas id="dots"></canvas>
 
@@ -172,54 +166,38 @@ canvas {
 (function() {
   const canvas = document.getElementById('dots');
   const ctx = canvas.getContext('2d');
-
   const SPACING = 19;
   const DOT_R = 1.8;
   const INFLUENCE = 130;
   const MAX_PUSH = 28;
   const TEAL = [12, 184, 182];
   const NAVY = [10, 46, 64];
-
   let W, H, cols, rows, dots = [];
   let mouse = { x: -9999, y: -9999 };
-
   function resize() {
     W = canvas.width = window.innerWidth;
     H = canvas.height = window.innerHeight;
     buildDots();
   }
-
   function buildDots() {
     dots = [];
     cols = Math.ceil(W / SPACING) + 1;
     rows = Math.ceil(H / SPACING) + 1;
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
-        dots.push({
-          ox: c * SPACING,
-          oy: r * SPACING,
-          x: c * SPACING,
-          y: r * SPACING,
-          vx: 0,
-          vy: 0
-        });
+        dots.push({ ox: c * SPACING, oy: r * SPACING, x: c * SPACING, y: r * SPACING, vx: 0, vy: 0 });
       }
     }
   }
-
   function lerp(a, b, t) { return a + (b - a) * t; }
-
   function draw() {
     ctx.clearRect(0, 0, W, H);
-
     for (let d of dots) {
       const dx = mouse.x - d.ox;
       const dy = mouse.y - d.oy;
       const dist = Math.sqrt(dx * dx + dy * dy);
-
       let tx = d.ox, ty = d.oy;
       let alpha = 0.18;
-
       if (dist < INFLUENCE && dist > 0) {
         const force = (1 - dist / INFLUENCE);
         const push = force * MAX_PUSH;
@@ -227,38 +205,33 @@ canvas {
         ty = d.oy - (dy / dist) * push;
         alpha = lerp(0.18, 0.65, force);
       }
-
-      // spring toward target
       d.vx += (tx - d.x) * 0.18;
       d.vy += (ty - d.y) * 0.18;
       d.vx *= 0.72;
       d.vy *= 0.72;
       d.x += d.vx;
       d.y += d.vy;
-
-      // color: interpolate between teal and navy based on proximity
       const t = dist < INFLUENCE ? (1 - dist / INFLUENCE) : 0;
       const r = Math.round(lerp(NAVY[0], TEAL[0], t));
       const g = Math.round(lerp(NAVY[1], TEAL[1], t));
       const b = Math.round(lerp(NAVY[2], TEAL[2], t));
-
       ctx.beginPath();
       ctx.arc(d.x, d.y, DOT_R + t * 1.2, 0, Math.PI * 2);
       ctx.fillStyle = `rgba(${r},${g},${b},${alpha})`;
       ctx.fill();
     }
-
     requestAnimationFrame(draw);
   }
-
   window.addEventListener('resize', resize);
   window.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   window.addEventListener('touchmove', e => {
     if (e.touches.length) { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }
   }, { passive: true });
   window.addEventListener('mouseleave', () => { mouse.x = -9999; mouse.y = -9999; });
-
   resize();
   draw();
 })();
 </script>
+
+</body>
+</html>
